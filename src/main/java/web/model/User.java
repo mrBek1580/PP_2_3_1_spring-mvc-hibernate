@@ -6,6 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.GenerationType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "users")
@@ -18,12 +21,17 @@ public class User {
     @Column(name = "id")
     private Long id;
 
+    @NotBlank(message = "Name should not be empty!")
+    @Pattern(regexp = "^[A-Za-z\\-]+$", message = "Only latters")
     @Column(name = "name")
     private String firstName;
 
+    @NotBlank(message = "Last name should not be empty!")
+    @Pattern(regexp = "^[A-Za-z\\-]+$", message = "Only latters")
     @Column(name = "last_name")
     private String lastName;
 
+    @Email(message = "Email should be valid. Example ***@domainname.***")
     @Column(name = "email")
     private String email;
 
