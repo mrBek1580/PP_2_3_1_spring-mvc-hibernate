@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>All users</title>
 </head>
 <body>
     <table border="1" cellpadding="5">
@@ -26,6 +26,7 @@
             <td><a th:href="'/deleteUser?id='+${user.id}">Delete</a></td>
         </tr>
     </table>
+    <br/>
     <form action="adduser" target="_blank">
         <button>Add new user</button>
     </form>
